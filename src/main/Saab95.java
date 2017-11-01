@@ -5,11 +5,11 @@ public class Saab95 extends Car{
     public boolean turboOn;
 
     public Saab95(){
-        nrDoors = 2;
-        color = Color.red;
-        enginePower = 125;
+        this.setNrDoors(2);
+        this.setColor(Color.red);
+        this.setEnginePower(125);
         turboOn = false;
-        modelName = "Saab95";
+        this.setModelName("Saab95");
         stopEngine();
     }
 
@@ -24,15 +24,7 @@ public class Saab95 extends Car{
     public double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
-        return enginePower * 0.01 * turbo;
-    }
-
-    public void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
-    }
-
-    public void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+        return getEnginePower() * 0.01 * turbo;
     }
 
     // TODO fix this method according to lab pm

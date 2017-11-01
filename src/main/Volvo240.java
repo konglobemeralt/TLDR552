@@ -5,23 +5,23 @@ public class Volvo240 extends Car{
     public final static double trimFactor = 1.25;
 
     public Volvo240(){
-        nrDoors = 4;
-        color = Color.black;
-        enginePower = 100;
-        modelName = "Volvo240";
+        this.setNrDoors(4);
+        this.setColor(Color.black);
+        this.setEnginePower(100);
+        this.setModelName("Volvo240");
         stopEngine();
     }
 
     public double speedFactor(){
-        return enginePower * 0.01 * trimFactor;
+        return getEnginePower() * 0.01 * trimFactor;
     }
 
     public void incrementSpeed(double amount){
-        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
+        setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
     }
 
     public void decrementSpeed(double amount){
-        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
+        setCurrentSpeed( Math.max(getCurrentSpeed() - speedFactor() * amount, 0));
     }
 
     // TODO fix this method according to lab pm
